@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Initial template with OpenSearch cluster at ES7
+# Resources section
+Resources:
+  OpenSearchDomain:
+    Type: AWS::OpenSearchService::Domain
+    UpdatePolicy:
+      EnableVersionUpgrade: true
+    Properties:
+      DomainName: search-domain-7tei8f
+      EngineVersion: OpenSearch_2.19
+      EBSOptions:
+        EBSEnabled: true
+        VolumeSize: 10
